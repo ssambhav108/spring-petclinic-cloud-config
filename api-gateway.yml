@@ -50,6 +50,22 @@ server:
 # Internationalization
 spring.messages.basename: messages/messages
 
+# Metrics
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
 ---
 spring:
   profiles: docker
